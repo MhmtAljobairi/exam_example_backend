@@ -6,9 +6,9 @@ export default class ProductsController {
 
     async getAll({ request }: HttpContextContract) {
 
-        var query = Product.query().preload("category", (subQry) => {
+        var query = Product.query().where("active", true).preload("category", (subQry) => {
             subQry.where("active", true);
-        }).where("active", true);
+        });
         if (request.input("categoryId")) {
             query.where("categoryId", request.input("categoryId"));
         }

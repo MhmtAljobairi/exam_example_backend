@@ -28,3 +28,4 @@ Route.post('/api/users/login', "UsersController.login");
 
 
 Route.get('/api/products', "ProductsController.getAll");
+Route.post('/api/orders', "OrdersController.create");
